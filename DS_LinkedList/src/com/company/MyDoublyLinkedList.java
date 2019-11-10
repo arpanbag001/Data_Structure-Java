@@ -13,6 +13,7 @@ public class MyDoublyLinkedList {
             tail = newNode;
         } else {
             tail.next = newNode;
+            newNode.prev = tail;
             tail = newNode;
         }
         length++;
@@ -27,6 +28,7 @@ public class MyDoublyLinkedList {
             tail = newNode;
         } else {
             newNode.next = head;
+            head.prev = newNode;
             head = newNode;
         }
         length++;
@@ -44,7 +46,9 @@ public class MyDoublyLinkedList {
             Node nextNode = beforeNode.next;
             Node newNode = new Node(value);
             newNode.next = nextNode;
+            newNode.prev = beforeNode;
             beforeNode.next = newNode;
+            nextNode.prev = newNode;
             length++;
             return newNode;
         }
@@ -103,8 +107,19 @@ public class MyDoublyLinkedList {
         while (tempNode != null) {
             System.out.print(tempNode.value);
             if (tempNode.next != null)
-                System.out.print("  -->  ");
+                System.out.print("  <-->  ");
             tempNode = tempNode.next;
+        }
+        System.out.println("\n");
+    }
+
+    void printListBackwards() {
+        Node tempNode = tail;
+        while (tempNode != null) {
+            System.out.print(tempNode.value);
+            if (tempNode.prev != null)
+                System.out.print("  <-->  ");
+            tempNode = tempNode.prev;
         }
         System.out.println("\n");
     }
@@ -112,6 +127,7 @@ public class MyDoublyLinkedList {
 
     class Node {
         int value;
+        Node prev;
         Node next;
 
         Node(int value) {
