@@ -89,14 +89,16 @@ public class MyLinkedList {
             Node trailingNode = head;
             Node leadingNode = trailingNode.next;
             while (leadingNode != null) {
-                Node tempNode = leadingNode.next;
+                Node nextNode = leadingNode.next;
                 leadingNode.next = trailingNode;
                 trailingNode = leadingNode;
-                leadingNode = tempNode;
+                leadingNode = nextNode;
             }
-            tail = head;    //Convert previous head into tail
+            //Swap
+            Node tempNode = head;
+            head = tail;
+            tail = tempNode;
             tail.next = null;
-            head = trailingNode;    //Convert previous tail into head
         }
         return head;
     }
