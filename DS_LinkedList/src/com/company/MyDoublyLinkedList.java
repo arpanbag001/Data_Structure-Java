@@ -90,17 +90,18 @@ public class MyDoublyLinkedList {
     Node reverse() {
         if (length > 1) { //List is having more than 1 element, as only then reversing makes sense
             Node currentNode = head;
-            Node tempNode = null;
             while (currentNode != null) {
-                tempNode = currentNode.prev;
+                Node nextNode = currentNode.next;   //Save the next node
+                Node tempNode = currentNode.prev;   //Swap
                 currentNode.prev = currentNode.next;
                 currentNode.next = tempNode;
-                currentNode = currentNode.prev;
+                currentNode = nextNode;     //Point to next node
             }
-            if (tempNode != null) {
-                tail = head;
-                head = tempNode.prev;
-            }
+            //Swap
+            Node tempNode = tail;
+            tail = head;
+            head = tempNode;
+
         }
         return head;
     }
