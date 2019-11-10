@@ -52,7 +52,7 @@ public class MyLinkedList {
     }
 
     Node remove(int index) {
-        if (head != null && tail != null) {     //List is not empty
+        if (length > 0) {     //List is not empty
             if (index <= 0) {       //Remove head
                 Node nodeToRemove = head;
                 head = head.next;
@@ -84,20 +84,22 @@ public class MyLinkedList {
         return currentNode;
     }
 
-//    void reverse() {
-//        if (head != null && tail != null) { //List is not empty
-//            Node trailingNode = head;
-//            Node leadingNode = trailingNode.next;
-//            Node tempNode;
-//            trailingNode.next = null;
-//            while (leadingNode != null) {
-//                tempNode = leadingNode.next;
-//                leadingNode.next = trailingNode;
-//                trailingNode = leadingNode;
-//                leadingNode = tempNode;
-//            }
-//        }
-//    }
+    Node reverse() {
+        if (length > 1) { //List is having more than 1 element, as only then reversing makes sense
+            Node trailingNode = head;
+            Node leadingNode = trailingNode.next;
+            while (leadingNode != null) {
+                Node tempNode = leadingNode.next;
+                leadingNode.next = trailingNode;
+                trailingNode = leadingNode;
+                leadingNode = tempNode;
+            }
+            tail = head;    //Convert previous head into tail
+            tail.next = null;
+            head = trailingNode;    //Convert previous tail into head
+        }
+        return head;
+    }
 
     void printList() {
         Node tempNode = head;
