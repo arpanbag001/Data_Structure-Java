@@ -87,20 +87,23 @@ public class MyDoublyLinkedList {
         return currentNode;
     }
 
-//    void reverse() {
-//        if (head != null && tail != null) { //List is not empty
-//            Node trailingNode = head;
-//            Node leadingNode = trailingNode.next;
-//            Node tempNode;
-//            trailingNode.next = null;
-//            while (leadingNode != null) {
-//                tempNode = leadingNode.next;
-//                leadingNode.next = trailingNode;
-//                trailingNode = leadingNode;
-//                leadingNode = tempNode;
-//            }
-//        }
-//    }
+    Node reverse() {
+        if (length > 1) { //List is having more than 1 element, as only then reversing makes sense
+            Node currentNode = head;
+            Node tempNode = null;
+            while (currentNode != null) {
+                tempNode = currentNode.prev;
+                currentNode.prev = currentNode.next;
+                currentNode.next = tempNode;
+                currentNode = currentNode.prev;
+            }
+            if (tempNode != null) {
+                tail = head;
+                head = tempNode.prev;
+            }
+        }
+        return head;
+    }
 
     void printList() {
         Node tempNode = head;
