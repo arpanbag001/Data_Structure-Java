@@ -129,7 +129,7 @@ public class MyDoublyLinkedList {
     }
 
 
-    class Node {
+    static class Node {
         int value;
         Node prev;
         Node next;

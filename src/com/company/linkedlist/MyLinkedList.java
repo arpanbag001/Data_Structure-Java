@@ -115,7 +115,7 @@ public class MyLinkedList {
     }
 
 
-    class Node {
+    static class Node {
         int value;
         Node next;
 
