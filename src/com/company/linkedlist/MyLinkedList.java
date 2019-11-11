@@ -1,4 +1,4 @@
-package com.company;
+package com.company.linkedlist;
 
 public class MyLinkedList {
 
@@ -6,7 +6,7 @@ public class MyLinkedList {
     private Node tail;
     private int length;
 
-    Node append(int value) {
+    public Node append(int value) {
         Node newNode = new Node(value);
 
         if (head == null && tail == null) { //List is empty
@@ -20,7 +20,7 @@ public class MyLinkedList {
         return newNode;
     }
 
-    Node prepend(int value) {
+    public Node prepend(int value) {
         Node newNode = new Node(value);
 
         if (head == null && tail == null) { //List is empty
@@ -34,7 +34,7 @@ public class MyLinkedList {
         return newNode;
     }
 
-    Node insert(int index, int value) {
+    public Node insert(int index, int value) {
 
         if (index <= 0)
             return prepend(value);
@@ -51,7 +51,7 @@ public class MyLinkedList {
         }
     }
 
-    Node remove(int index) {
+    public Node remove(int index) {
         if (length > 0) {     //List is not empty
             if (index <= 0) {       //Remove head
                 Node nodeToRemove = head;
@@ -84,7 +84,7 @@ public class MyLinkedList {
         return currentNode;
     }
 
-    Node reverse() {
+    public Node reverse() {
         if (length > 1) { //List is having more than 1 element, as only then reversing makes sense
             Node trailingNode = head;
             Node leadingNode = trailingNode.next;
@@ -103,7 +103,7 @@ public class MyLinkedList {
         return head;
     }
 
-    void printList() {
+    public void printList() {
         Node tempNode = head;
         while (tempNode != null) {
             System.out.print(tempNode.value);

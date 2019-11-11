@@ -1,11 +1,11 @@
-package com.company;
+package com.company.linkedlist;
 
 public class MyDoublyLinkedList {
     private Node head;
     private Node tail;
     private int length;
 
-    Node append(int value) {
+    public Node append(int value) {
         Node newNode = new Node(value);
 
         if (head == null && tail == null) { //List is empty
@@ -20,7 +20,7 @@ public class MyDoublyLinkedList {
         return newNode;
     }
 
-    Node prepend(int value) {
+    public Node prepend(int value) {
         Node newNode = new Node(value);
 
         if (head == null && tail == null) { //List is empty
@@ -35,7 +35,7 @@ public class MyDoublyLinkedList {
         return newNode;
     }
 
-    Node insert(int index, int value) {
+    public Node insert(int index, int value) {
 
         if (index <= 0)
             return prepend(value);
@@ -54,7 +54,7 @@ public class MyDoublyLinkedList {
         }
     }
 
-    Node remove(int index) {
+    public Node remove(int index) {
         if (head != null && tail != null) {     //List is not empty
             if (index <= 0) {       //Remove head
                 Node nodeToRemove = head;
@@ -87,7 +87,7 @@ public class MyDoublyLinkedList {
         return currentNode;
     }
 
-    Node reverse() {
+    public Node reverse() {
         if (length > 1) { //List is having more than 1 element, as only then reversing makes sense
             Node currentNode = head;
             while (currentNode != null) {
@@ -106,7 +106,7 @@ public class MyDoublyLinkedList {
         return head;
     }
 
-    void printList() {
+    public void printList() {
         Node tempNode = head;
         while (tempNode != null) {
             System.out.print(tempNode.value);
@@ -117,7 +117,7 @@ public class MyDoublyLinkedList {
         System.out.println("\n");
     }
 
-    void printListBackwards() {
+    public void printListBackwards() {
         Node tempNode = tail;
         while (tempNode != null) {
             System.out.print(tempNode.value);
