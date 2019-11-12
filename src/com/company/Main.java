@@ -1,27 +1,23 @@
 package com.company;
 
 import com.company.graph.MyGraphUndirectedUnweighted;
-import com.company.graph.MyGraphUndirectedWeighted;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        MyGraphUndirectedWeighted myGraphUndirectedWeighted = new MyGraphUndirectedWeighted();
+        MyGraphUndirectedUnweighted myGraphUndirectedUnweighted = new MyGraphUndirectedUnweighted();
 
-        myGraphUndirectedWeighted.addVertex(0);
-        myGraphUndirectedWeighted.addVertex(1);
-        myGraphUndirectedWeighted.addVertex(2);
-        myGraphUndirectedWeighted.addVertex(3);
-        myGraphUndirectedWeighted.addVertex(4);
+        myGraphUndirectedUnweighted.addVertex(2);
+        myGraphUndirectedUnweighted.addVertex(4);
+        myGraphUndirectedUnweighted.addVertex(6);
+        myGraphUndirectedUnweighted.addVertex(8);
 
-        myGraphUndirectedWeighted.addEdge(0, 1, 2);
-        myGraphUndirectedWeighted.addEdge(0, 2, 2);
-        myGraphUndirectedWeighted.addEdge(0, 4, 1);
-        myGraphUndirectedWeighted.addEdge(2, 4, 3);
-        myGraphUndirectedWeighted.addEdge(3, 4, 2);
+        myGraphUndirectedUnweighted.addEdge(2, 4);
+        myGraphUndirectedUnweighted.addEdge(4, 8);
+        myGraphUndirectedUnweighted.addEdge(4, 6);
 
-        myGraphUndirectedWeighted.printGraph(MyGraphUndirectedUnweighted.GRAPH_TYPE_ADJACENCY_LIST);
-        myGraphUndirectedWeighted.printGraph(MyGraphUndirectedUnweighted.GRAPH_TYPE_EDGE_LIST);
+        myGraphUndirectedUnweighted.printGraph(MyGraphUndirectedUnweighted.GRAPH_TYPE_ADJACENCY_LIST);
+        myGraphUndirectedUnweighted.printGraph(MyGraphUndirectedUnweighted.GRAPH_TYPE_EDGE_LIST);
     }
 }
