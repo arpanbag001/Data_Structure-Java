@@ -19,7 +19,6 @@ public class MyGraphDirectedWeighted {
         //Update the adjacency list
         if (adjacentList.containsKey(node1) && adjacentList.containsKey(node2)) {
             adjacentList.get(node1).add(new NodeWeightTuple(node2, weight));
-            adjacentList.get(node2).add(new NodeWeightTuple(node1, weight));
         }
 
         //Update the edgeList
@@ -56,7 +55,7 @@ public class MyGraphDirectedWeighted {
         }
 
         String getEdge() {
-            return (node1 + " <-- " + weight + "--> " + node2);
+            return (node1 + " -- " + weight + "--> " + node2);
         }
     }
 
