@@ -1,19 +1,21 @@
 package com.company;
 
-import com.company.tree.MyBinarySearchTree;
+import com.company.graph.MyGraphUndirectedUnweighted;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
+        MyGraphUndirectedUnweighted myGraphUndirectedUnweighted = new MyGraphUndirectedUnweighted();
 
-        myBinarySearchTree.insert(1);
-        myBinarySearchTree.insert(2);
-        myBinarySearchTree.insert(4);
-        myBinarySearchTree.insert(3);
-        myBinarySearchTree.insert(5);
-        //myBinarySearchTree.traversalInorder(myBinarySearchTree.getRoot());
-        System.out.println(myBinarySearchTree.lookup(3));
+        myGraphUndirectedUnweighted.addVertex(2);
+        myGraphUndirectedUnweighted.addVertex(4);
+        myGraphUndirectedUnweighted.addVertex(6);
+        myGraphUndirectedUnweighted.addVertex(8);
+
+        myGraphUndirectedUnweighted.addEdge(2, 4);
+        myGraphUndirectedUnweighted.addEdge(4, 8);
+
+        myGraphUndirectedUnweighted.printGraph();
     }
 }
