@@ -15,7 +15,9 @@ public class Main {
 
         myGraphUndirectedUnweighted.addEdge(2, 4);
         myGraphUndirectedUnweighted.addEdge(4, 8);
+        myGraphUndirectedUnweighted.addEdge(4, 6);
 
-        myGraphUndirectedUnweighted.printGraph();
+        myGraphUndirectedUnweighted.printGraph(MyGraphUndirectedUnweighted.GRAPH_TYPE_ADJACENCY_LIST);
+        myGraphUndirectedUnweighted.printGraph(MyGraphUndirectedUnweighted.GRAPH_TYPE_EDGE_LIST);
     }
 }
