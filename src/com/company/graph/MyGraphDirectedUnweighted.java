@@ -19,7 +19,6 @@ public class MyGraphDirectedUnweighted {
         //Update the adjacency list
         if (adjacentList.containsKey(node1) && adjacentList.containsKey(node2)) {
             adjacentList.get(node1).add(node2);
-            adjacentList.get(node2).add(node1);
         }
 
         //Update the edgeList
@@ -47,7 +46,7 @@ public class MyGraphDirectedUnweighted {
         }
 
         String getEdge() {
-            return (node1 + " <--> " + node2);
+            return (node1 + " --> " + node2);
         }
     }
 }
